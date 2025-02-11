@@ -77,3 +77,13 @@ function createBudgetTracker(){
 let budget = createBudgetTracker();  //The function will call the function to keep a total and then when called with a value, will add the expense to the total.
 console.log(`Current Balance: -$${budget(300)}`);
 console.log(`Current Balance: -$${budget(200)}`);
+
+
+//Task 8: Recursion in JavaScript
+function calculateGrowth(years, revenue){
+    if (years >= 10) return revenue;
+    return calculateGrowth(years + 1, (revenue + (revenue * 0.05)))}  //The function will return to the beginning of the function if the number of years is under 10 after adding another year and 5% to the revenue
+
+//Call the function and plug in the values for year and revenue to calculate the projected revenue
+console.log(`Projected Revenue: $${calculateGrowth(8, 1000).toFixed(2)}`) 
+console.log(`Projected Revenue: $${calculateGrowth(5, 5000).toFixed(2)}`)
