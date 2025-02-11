@@ -45,3 +45,12 @@ function calculateShippingCost(weight, location, expedited = false){  //Write a 
 //Call the function to plug in the parameters and calculate the shipping cost
 console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true).toFixed(2)}`)
 console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false).toFixed(2)}`)
+
+
+//Task 5: Returning Values
+function calculateLoanInterest(principal, rate, years){
+    interest = principal * rate * years
+    return interest}
+
+console.log(`Total Interest: $${calculateLoanInterest(1000,0.05,3).toFixed(2)}`)
+console.log(`Total Interest: $${calculateLoanInterest(5000,0.07,5).toFixed(2)}`)
