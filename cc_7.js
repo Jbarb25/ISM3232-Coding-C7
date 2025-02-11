@@ -64,3 +64,16 @@ function filterHighValueTransactions(transactions, filterFunction){
 
 //The function will filter the transactions by applying the filter that is plugged in when it is called. 
 console.log(`Filtered High Value Transactions: [${filterHighValueTransactions(transactions, amount => amount > 1000)}]`)
+
+
+//Task 7: Closures
+function createBudgetTracker(){
+    let totalExpenses = 0;
+
+    return function(expense){   // The function createBudgetTracker will keep a running total of the expenses by taking the expenses and adding it to the total each time
+        totalExpenses += expense;
+        return totalExpenses;}}
+
+let budget = createBudgetTracker();  //The function will call the function to keep a total and then when called with a value, will add the expense to the total.
+console.log(`Current Balance: -$${budget(300)}`);
+console.log(`Current Balance: -$${budget(200)}`);
