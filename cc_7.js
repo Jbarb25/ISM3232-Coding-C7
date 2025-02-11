@@ -48,9 +48,19 @@ console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false).toFixed
 
 
 //Task 5: Returning Values
-function calculateLoanInterest(principal, rate, years){
-    interest = principal * rate * years
-    return interest}
+function calculateLoanInterest(principal, rate, years){ 
+    interest = principal * rate * years //Calculate the interest using the formula
+    return interest}  //Have the function return the interest value after calculating it based on the plugged in parameters
 
 console.log(`Total Interest: $${calculateLoanInterest(1000,0.05,3).toFixed(2)}`)
 console.log(`Total Interest: $${calculateLoanInterest(5000,0.07,5).toFixed(2)}`)
+
+//Task 6: Higher-Order Functions
+let transactions = [500, 1200, 3000, 800, 2200]
+
+function filterHighValueTransactions(transactions, filterFunction){
+    let filteredTrans = transactions.filter(filterFunction);  //The function will filter through the array of transaction values and apply the function "filterFunction"
+    return filteredTrans} 
+
+//The function will filter the transactions by applying the filter that is plugged in when it is called. 
+console.log(`Filtered High Value Transactions: [${filterHighValueTransactions(transactions, amount => amount > 1000)}]`)
