@@ -34,12 +34,9 @@ console.log(`Discounted Price: $${calculateLoyaltyDiscount(200, 2).toFixed(2)}`)
 
 //Task 4: Parameters and Arguments
 function calculateShippingCost(weight, location, expedited = false){  //Write a function that calculates shipping costs with parameters of weight, location, and expedited = false
-    let shippingCost = 0;  //Shipping cost will start with 0
-    if (location === "USA") shippingCost = 5 + (weight * 0.5);
-    else if (location === "Canada") shippingCost = 10 + (weight * 0.7);
-    else;    //The first if else function will identify a location and run the cost based on what is plugged in when called
+    let locationEvaluation = {"USA": (5 + 0.5*[weight]), "Canada": (10 + 0.7*[weight])};
+    let shippingCost = (locationEvaluation[location]); //Sort through which calculations to apply based on the location and return the total shipping cost calculated with the weight and charges
     if (expedited) shippingCost += 10;
-    else;   //The second if else function will identify if it is expedited or not and add $10 if it is or do nothing if it is not
     return shippingCost;}
 
 //Call the function to plug in the parameters and calculate the shipping cost
